@@ -8,10 +8,24 @@
 }
 
 .bigBlue{
+    background-color: blue;
+    color: white;
+}
+.centered{
+    text-align: center;
+    margin: 10%;
+}
+
+.bigGreen{
     background-color: green;
     color: white;
 }
 .centered{
     text-align: center;
     margin: 10%;
+}
+
+.bigYellow{
+    background-color: yellow;
+    color: black;
 }

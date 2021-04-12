@@ -1,4 +1,8 @@
+
+
 let x
+var highscore = localStorage.getItem("highscore");
+document.getElementById("highscore").innerHTML = highscore
 // if the key value pair exists, we set x equal to the stored value
 // else, set x to 0
 if (localStorage.getItem("count")){
@@ -18,10 +22,37 @@ function iterate(){
 
 
 document.getElementById('btn2').addEventListener("click", reset)
-document.getElementById("counter").innerHTML = x
 function reset(){
     x = 0
     localStorage.setItem("count", x)
     console.log(x)
     document.getElementById("counter").innerHTML = x
+}
+
+
+
+document.getElementById('btn3').addEventListener("click", highScore)
+function highScore(){
+    //const name = prompt('You got a high score! Enter name:');
+    var highscore = localStorage.getItem("highscore");
+    if(highscore !== null){
+        if (x > highscore) {
+            localStorage.setItem("highscore", x); 
+            
+            document.getElementById("highscore").innerHTML = x    
+        }
+    }
+    else{
+        localStorage.setItem("highscore", x);
+        
+        document.getElementById("highscore").innerHTML = x  
+    }
+}
+
+document.getElementById('btn4').addEventListener("click", resetScore)
+function resetScore(){
+    highscore = 0
+    localStorage.setItem("highscore", highscore)
+    console.log(highscore)
+    document.getElementById("highscore").innerHTML = highscore
 }
