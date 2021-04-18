@@ -1,6 +1,7 @@
 
 
 let x
+//This needs to grab from the database not local storage 
 var highscore = localStorage.getItem("highscore");
 document.getElementById("highscore").innerHTML = highscore
 // if the key value pair exists, we set x equal to the stored value
@@ -34,15 +35,18 @@ function reset(){
 document.getElementById('btn3').addEventListener("click", highScore)
 function highScore(){
     //const name = prompt('You got a high score! Enter name:');
+    //This needs to grab from the database not local storage 
     var highscore = localStorage.getItem("highscore");
     if(highscore !== null){
         if (x > highscore) {
+            //This needs to set the value in the database
             localStorage.setItem("highscore", x); 
             
             document.getElementById("highscore").innerHTML = x    
         }
     }
     else{
+        //This needs to set the value in the database
         localStorage.setItem("highscore", x);
         
         document.getElementById("highscore").innerHTML = x  
@@ -52,6 +56,7 @@ function highScore(){
 document.getElementById('btn4').addEventListener("click", resetScore)
 function resetScore(){
     highscore = 0
+    //This needs to set the value in the database
     localStorage.setItem("highscore", highscore)
     console.log(highscore)
     document.getElementById("highscore").innerHTML = highscore
