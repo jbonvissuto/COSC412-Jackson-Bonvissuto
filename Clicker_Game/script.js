@@ -62,3 +62,11 @@ function resetScore(){
     document.getElementById("highscore").innerHTML = highscore;
 }
 
+window.addEventListener("load", function(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "1b-database.php");
+    xhr.onload = function(){
+      document.getElementById("demo").innerHTML = this.response;
+    };
+    xhr.send();
+  });
