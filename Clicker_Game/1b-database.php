@@ -14,11 +14,11 @@
    );
  } catch (Exception $ex) { exit($ex->getMessage()); }
 
- // (C) GET USERS
+ // (C) GET high_score
  $stmt = $pdo->prepare("SELECT * FROM `highscores`");
  $stmt->execute();
- $users = $stmt->fetchAll();
- foreach ($users as $u) {
+ $highscores = $stmt->fetchAll();
+ foreach ($highscores as $u) {
    printf("<div>[%u] %s</div>", $u['high_score']); 
  } 
 
