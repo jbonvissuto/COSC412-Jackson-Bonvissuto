@@ -19,7 +19,7 @@
  $stmt->execute();
  $highscores = $stmt->fetchAll();
  foreach ($highscores as $u) {
-   printf("<div>[%u] %s</div>", $u['high_score']); 
+   printf("<div>[%u] %s</div>", $u['score_num'], $u['high_score'] ); 
  } 
 
  // (D) CLOSE DATABASE CONNECTION
