@@ -42,7 +42,8 @@ function highScore(){
             //This needs to set the value in the database
             localStorage.setItem("highscore", x); 
             
-            document.getElementById("highscore").innerHTML = x;    
+            document.getElementById("highscore").innerHTML = x; 
+            saveScore();   
         }
     }
     else{
@@ -62,9 +63,16 @@ function resetScore(){
     document.getElementById("highscore").innerHTML = highscore;
 }
 
+
+//store scroe in database
+function saveScore() {
+    $.post("save_score.php", {score: "highscore"} );
+}
+
+//reads highscore from database 
 window.addEventListener("load", function(){
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', "1b-database.php");
+    xhr.open('POST', "show_score.php");
     xhr.onload = function(){
       document.getElementById("demo").innerHTML = this.response;
     };
