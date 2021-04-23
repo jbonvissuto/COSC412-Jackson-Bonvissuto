@@ -11,8 +11,6 @@ if ($conn->connect_error) {     // Check connection
 
 $highscore = mysqli_real_escape_string($conn, $_POST['score']);//Gets the value of the passed variable after score:
 
-if (strlen($times) > 200000) {  $times = "";    }//Checks if to many requests or something 
-
 $sql = "UPDATE highscore set high_score=$highscore WHERE ID=1 ;";//update the highscore value in the database 
 
 $conn->close();
