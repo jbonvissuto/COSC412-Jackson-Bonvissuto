@@ -15,6 +15,6 @@ if (strlen($times) > 200000) {  $times = "";    }//Checks if to many requests or
 
 $sql = "SELECT high_score FROM highscore WHERE ID=1 ;"; //Get the high schore from the database 
 echo "$row['high_score']";
-
+echo"test";
 $conn->close();
 ?>
