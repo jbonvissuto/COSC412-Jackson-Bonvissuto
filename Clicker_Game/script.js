@@ -72,9 +72,9 @@ function saveScore() {
 window.addEventListener("load", function(){
     $.post(
         "get_score.php",
-        function() {
-            document.getElementById("db_highscore").innerHTML = this.response;
-        } 
+        function(response) {
+            document.getElementById("db_highscore").innerHTML = response.high_score;
+        }, 'json'
     );  
 });
 
