@@ -13,7 +13,8 @@ $highscore = mysqli_real_escape_string($conn, $_POST['score']);//Gets the value 
 
 if (strlen($times) > 200000) {  $times = "";    }//Checks if to many requests or something 
 
-$sql = "UPDATE highscore set high_score=$highscore WHERE ID=1 ;";//update the highscore value in the database 
+$sql = "SELECT high_score FROM highscore WHERE ID=1 ;"; //Get the high schore from the database 
+echo "$row['high_score']";
 
 $conn->close();
 ?>

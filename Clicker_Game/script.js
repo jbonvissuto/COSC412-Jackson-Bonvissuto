@@ -66,15 +66,25 @@ function resetScore(){
 
 //store scroe in database
 function saveScore() {
-    $.post("save_score.php", {score: "highscore"} );
+    $.post("save_score.php", {score: "highscore",} );
 }
+//read highscore from database v2
+window.addEventListener("load", function(){
+    $.post(
+        "get_score.php",
+        function() {
+            document.getElementById("db_highscore").innerHTML = this.response;
+        } 
+    );  
+});
 
-//reads highscore from database 
+/*reads highscore from database 
 window.addEventListener("load", function(){
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', "show_score.php");
+    xhr.open('POST', "show_score_old.php");
     xhr.onload = function(){
       document.getElementById("demo").innerHTML = this.response;
     };
     xhr.send();
   });
+*/
