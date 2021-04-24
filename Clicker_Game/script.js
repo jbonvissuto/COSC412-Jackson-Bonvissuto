@@ -66,7 +66,7 @@ function resetScore(){
 
 //store scroe in database
 function saveScore() {
-    $.post("save_score.php", {score: "highscore",} );
+    $.post("set_score.php", {score: "highscore",} );
 }
 //read highscore from database v2
 window.addEventListener("load", function(){

@@ -10,8 +10,7 @@ if ($conn->connect_error) {     // Check connection
 } 
 
 //$highscore = mysqli_real_escape_string($conn, $_POST['score']);//Gets the value of the passed variable after score:
-
-$sql = "UPDATE highscore SET `high_score`=0 WHERE ID=1";//update the highscore value in the database 
+$sql = "UPDATE highscore SET high_score=$highscore WHERE ID=1 ;";//update the highscore value in the database 
 
 $conn->close();
 ?>
