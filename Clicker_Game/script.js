@@ -43,7 +43,7 @@ function highScore(){
             localStorage.setItem("highscore", x); 
             
             document.getElementById("highscore").innerHTML = x; 
-            saveScore();   
+            saveScore();
         }
     }
     else{
@@ -69,22 +69,22 @@ function saveScore() {
     $.post("set_score.php", {score: "highscore",} );
 }
 //read highscore from database v2
-window.addEventListener("load", function(){
+function getScore(){
     $.post(
         "get_score.php",
         function(response) {
             document.getElementById("db_highscore").innerHTML = response.high_score;
         }, 'json'
-    );  
-});
+    ); 
+}
 
-/*reads highscore from database 
-window.addEventListener("load", function(){
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', "show_score_old.php");
-    xhr.onload = function(){
-      document.getElementById("demo").innerHTML = this.response;
-    };
-    xhr.send();
-  });
-*/
+$(function(){
+    setInterval(oneSecondFunction, 1000);
+    });
+
+// stuff you want to do every second   
+function oneSecondFunction() {
+    window.addEventListener("load", getScore);    
+}
+
+    
