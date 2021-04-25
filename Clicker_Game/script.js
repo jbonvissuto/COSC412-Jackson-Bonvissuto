@@ -78,13 +78,8 @@ function getScore(){
     ); 
 }
 
-$(function(){
-    setInterval(oneSecondFunction, 1000);
-    });
+var myVar = setInterval(myTimer, 1000);
 
-// stuff you want to do every second   
-function oneSecondFunction() {
-    window.addEventListener("load", getScore);    
+function myTimer() {
+  getScore();
 }
-
-    
