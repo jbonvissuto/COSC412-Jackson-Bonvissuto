@@ -87,8 +87,8 @@ function myTimer() {
 window.addEventListener("load", getUserId);
 function getUserId() {
     $.post("get_user_id.php",function(response) {
-           ID = response
-           document.getElementById("ID").innerHTML = ID
+           ID = response.user_id;
+           document.getElementById("ID").innerHTML = ID;
         }, 'json'
     );
     
