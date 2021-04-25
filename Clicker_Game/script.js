@@ -85,6 +85,7 @@ function myTimer() {
   getScore();
 }
 window.addEventListener("load", getUserId);
+let ID = 0;
 function getUserId() {
     $.post("get_user_id.php",function(user_id) {
            ID = user_id;
