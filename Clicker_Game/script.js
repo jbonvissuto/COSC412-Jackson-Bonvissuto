@@ -69,7 +69,7 @@ function saveScore() {
     $.post("set_score.php", {"score": x} );
 }
 //read highscore from database v2
-function getScore(){
+function getScore(){ 
     $.post(
         "get_score.php",
         function(response) {
@@ -84,9 +84,11 @@ var myVar = setInterval(myTimer, 1000); //timer that goes every secound
 function myTimer() {
   getScore();
 }
-window.addEventListener("load", getUserId);
+
 let ID = 0;
+window.addEventListener("load", getUserId);
 function getUserId() {
+    document.getElementById("ID").innerHTML = ID;
     $.post("get_user_id.php",function(user_id) {
            ID = user_id;
            document.getElementById("ID").innerHTML = ID;
