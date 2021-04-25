@@ -11,7 +11,8 @@ if ($conn->connect_error) {     // Check connection
 
 $sql = "SELECT high_score FROM highscore WHERE ID=1 ;"; //Get the high schore from the database 
 $result = $conn->query($sql);
-if ($result->num_rows > 0) {
+//Puts result into a json 
+if ($result->num_rows > 0) { 
     while($row = $result->fetch_assoc()) {
         $response['high_score'] = $row["high_score"];
     }
