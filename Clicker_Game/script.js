@@ -64,9 +64,9 @@ function resetScore(){
 }
 
 
-//store scroe in database
+//store score in database
 function saveScore() {
-    $.post("set_score.php", {score: "highscore",} );
+    $.post("set_score.php", 'score=' +$("highscore").val() );
 }
 //read highscore from database v2
 function getScore(){
@@ -77,8 +77,9 @@ function getScore(){
         }, 'json'
     ); 
 }
+window.addEventListener("load", getScore) //gets the score on page load and reload 
 
-var myVar = setInterval(myTimer, 1000);
+var myVar = setInterval(myTimer, 1000); //timer that goes every secound 
 
 function myTimer() {
   getScore();
