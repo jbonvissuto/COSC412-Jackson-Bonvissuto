@@ -89,10 +89,8 @@ let ID = 5;
 window.addEventListener("load", getUserId);
 function getUserId() {
     $.post("get_user_id.php",function(user_id) {
-           console.log("hello 1\n");
            ID = user_id;
            document.getElementById("ID").innerHTML = ID;
-           console.log("hello 2\n");
         }
     );
     
