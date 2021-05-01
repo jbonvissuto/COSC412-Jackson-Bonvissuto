@@ -34,7 +34,7 @@ $("#connect").click(function(e) {
 });
 
 function checkAccount(){
-        $.post("checkAccount.php", {"username": username.value, "password": password.value}, function() {
+        $.post("getAccount.php", {"username": username.value, "password": password.value}, function() {
             alert( "success" );
 })
   .done(function() {
