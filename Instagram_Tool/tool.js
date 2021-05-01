@@ -33,7 +33,7 @@ $("#connect").click(function(e) {
       }
 });
 
-function checkAccount(){
+/*function checkAccount(){
         $.post("getAccount.php", {"username": username.value, "password": password.value}, function() {
             alert( "success" );
 })
@@ -44,8 +44,7 @@ function checkAccount(){
     alert( "error" );
   });
     
-}
-/*
+}*/
 function checkAccount(){
     $.ajax({
         url: "getAccount.php",
@@ -53,11 +52,10 @@ function checkAccount(){
         data: {username: username.value, password: password.value},
         dataType: "json",
         success: function() {
-          alert("Thank you for subscribing!");
+          alert("worked");
         },
         error: function() {
           alert("There was an error. Try again please!");
         }
       });
 }
-*/
