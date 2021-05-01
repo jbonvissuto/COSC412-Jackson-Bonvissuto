@@ -19,6 +19,8 @@ $("#connect").click(function(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
     localStorage.setItem('password', password.value);
+    console.log(localStorage.getItem('username'));
+    console.log(localStorage.getItem('password'));
     checkAccount();
     if(localStorage.getItem('username') === "bat" && localStorage.getItem('password') === "test"){
         location.href = "tool.html";
@@ -51,8 +53,10 @@ function checkAccount(){
         type: "POST",
         data: {username: localStorage.getItem('username'), password: localStorage.getItem('password')},
         dataType: "json",
-        success: function() {
-          alert("worked");
+        success: function(data) {
+            if(data.status == 'success'){
+                alert("Thank you for subscribing!");
+            }
         },
         error: function() {
           alert("There was an error. Try again please!");
