@@ -3,11 +3,10 @@ use Phpfastcache\Helper\Psr16Adapter;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'batmanthepic', '0OYoUi6NbMqH', new Psr16Adapter('Files'));
-$instagram->login();
+$instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
 sleep(2); // Delay to mimic user
 
-$username = 'batmanthepic';
+$username = 'jheneaiko';
 $followers = [];
 $account = $instagram->getAccount($username);
 sleep(1);

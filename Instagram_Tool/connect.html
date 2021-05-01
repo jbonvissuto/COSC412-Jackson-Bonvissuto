@@ -1,0 +1,27 @@
+<!DOCTYPE html 
+<html>
+<head>
+<title></title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body >
+<div id="popupbox"> 
+    
+    <form id="login-form" class="form-container" onsubmit="return false" > 
+
+        <label for="username"><b>Instagram Username</b></label>
+        <input id="username" type="text" placeholder="Name" value="" required/>
+
+        <label for="password"><b>Instagram Password</b></label>
+        <input id="password" type="password" placeholder="Password" value="" required/>
+
+        <button type="submit" onclick="store();" class="bn29">Connect</button>
+        <span id="error" class="fail"></span>
+      </form>
+
+
+</div> 
+<script src="./jquery-3.6.0.min.js"></script>  
+<script src="./tool.js"></script>
+</body>
+</html>
