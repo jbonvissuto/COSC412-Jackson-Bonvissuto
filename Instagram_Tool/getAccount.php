@@ -5,8 +5,8 @@ require __DIR__ . '/scraper/vendor/autoload.php';
 // If account is public you can query Instagram without auth
 //$username = $_POST['username'];
 //$password = $_POST['password'];
-$username = "batmanthepic"
-$password = "0OYoUi6NbMqH"
+$username = "batmanthepic";
+$password = "0OYoUi6NbMqH";
 $instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username, $password, new Psr16Adapter('Files'));
 $instagram->login();
 $instagram->saveSession();
