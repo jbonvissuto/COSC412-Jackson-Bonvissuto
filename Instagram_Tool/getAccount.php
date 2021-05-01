@@ -3,8 +3,9 @@ use Phpfastcache\Helper\Psr16Adapter;
 require __DIR__ . '/scraper/vendor/autoload.php';
 
 // If account is public you can query Instagram without auth
-
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'batmanthepic!!', '0OYoUi6NbMqH', new Psr16Adapter('Files'));
+$username = $_POST['username'];
+$password = $_POST['password'];
+$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username, $password, new Psr16Adapter('Files'));
 $instagram->login();
 $instagram->saveSession();
 sleep(2); // Delay to mimic user

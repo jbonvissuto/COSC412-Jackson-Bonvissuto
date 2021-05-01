@@ -19,8 +19,8 @@ $("#connect").click(function(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
     localStorage.setItem('password', password.value);
-    checkAccount();
-    if(username.value === "bat" && password.value === "test"){
+    //checkAccount();
+    if(localStorage.getItem('username') === "bat" && localStorage.getItem('password') === "test"){
         location.href = "tool.html";
       }  
       else{
@@ -49,7 +49,7 @@ function checkAccount(){
     $.ajax({
         url: "getAccount.php",
         type: "POST",
-        data: {username: username.value, password: password.value},
+        data: {username: localStorage.getItem('username'), password: localStorage.getItem('password')},
         dataType: "json",
         success: function() {
           alert("worked");
