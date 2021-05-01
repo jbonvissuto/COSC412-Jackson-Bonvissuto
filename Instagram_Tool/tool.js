@@ -18,6 +18,7 @@ setTimeout(function() {
 function store() {
     localStorage.setItem('username', username.value);
     localStorage.setItem('password', password.value);
+    checkAccount()
     if(username.value === "bat" && password.value === "test"){
         location.href = "tool.html";
       }  
@@ -34,6 +35,16 @@ function store() {
 
 
 function checkAccount(){
-    
+    $.ajax({
+        url: "getAccount.php",
+        type: "POST",
+        data: {username: username.value, password: password.value,},
+        dataType: "json",
+        success: function() {
+          alert("Thank you for subscribing!");
+        },
+        error: function() {
+          alert("There was an error. Try again please!");
+        }
+      });
 }
-

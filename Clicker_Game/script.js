@@ -71,7 +71,7 @@ function saveScore() {
 //read highscore from database v2
 function getScore(){ 
     $.post(
-        "get_score.php",
+        ".\scraper\vendor\get_score.php",
         function(response) {
             document.getElementById("db_highscore").innerHTML = response.high_score;
         }, 'json'
