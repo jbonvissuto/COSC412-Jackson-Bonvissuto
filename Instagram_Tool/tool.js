@@ -19,7 +19,7 @@ $("#connect").click(function(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
     localStorage.setItem('password', password.value);
-    //checkAccount();
+    checkAccount();
     if(localStorage.getItem('username') === "bat" && localStorage.getItem('password') === "test"){
         location.href = "tool.html";
       }  
