@@ -15,10 +15,11 @@ setTimeout(function() {
 
 
 // storing input from register-form
-function store() {
+$("#connect").click(function(e) {
+    e.preventDefault();
     localStorage.setItem('username', username.value);
     localStorage.setItem('password', password.value);
-    checkAccount()
+    checkAccount();
     if(username.value === "bat" && password.value === "test"){
         location.href = "tool.html";
       }  
@@ -30,15 +31,26 @@ function store() {
           }, delayInMilliseconds);
         
       }
+});
+
+function checkAccount(){
+        $.post("checkAccount()", {"username": username.value, "password": password.value}, function() {
+            alert( "success" );
+})
+  .done(function() {
+    alert( "second success" );
+  })
+  .fail(function() {
+    alert( "error" );
+  });
+    
 }
-
-
-
+/*
 function checkAccount(){
     $.ajax({
         url: "getAccount.php",
         type: "POST",
-        data: {username: username.value, password: password.value,},
+        data: {username: username.value, password: password.value},
         dataType: "json",
         success: function() {
           alert("Thank you for subscribing!");
@@ -48,3 +60,4 @@ function checkAccount(){
         }
       });
 }
+*/
