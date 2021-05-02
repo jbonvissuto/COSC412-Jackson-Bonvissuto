@@ -33,10 +33,10 @@ function checkAccount(){
       location.href = "tool.html";
       //Display the stats on the tool page
       document.getElementById("username").innerHTML = username;
-      document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
-      document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
-      document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
-      document.getElementById("followsNum").innerHTML = localStorage.getItem('followsNum');
+      document.getElementById("fullName").innerHTML = username //localStorage.getItem('fullName');
+      document.getElementById("postNum").innerHTML = username //localStorage.getItem('postNum');
+      document.getElementById("followersNum").innerHTML = username//localStorage.getItem('followersNum');
+      document.getElementById("followsNum").innerHTML = username//localStorage.getItem('followsNum');
   }, 'json' 
   )
   .fail(function() {
