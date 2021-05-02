@@ -33,7 +33,7 @@ function checkAccount(){
       location.href = "tool.html";
       //Display the stats on the tool page
       document.getElementById("username").innerHTML     = localStorage.getItem('username');
-      document.getElementById("fullName").innerHTML     = localStorage.getItem('fullNam');
+      document.getElementById("fullName").innerHTML     = localStorage.getItem('fullName');
       document.getElementById("postNum").innerHTML      = localStorage.getItem('postNum');
       document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
       document.getElementById("followsNum").innerHTML   = localStorage.getItem('followsNum');
