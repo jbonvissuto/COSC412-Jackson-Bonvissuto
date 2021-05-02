@@ -1,11 +1,14 @@
 
 // username from input 
 var username = document.getElementById('username');
+var div = document.getElementById('load');
+
 
 // storing input from register-form
 $("#connect").click(function(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
+    div.style.display = 'block';
     checkAccount();
 });
 
