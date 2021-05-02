@@ -26,10 +26,11 @@ for ($x = 0; $x < $account->getMediaCount(); $x++) {
 $url = $account->getProfilePicUrl();
 function encoding($url){
 	$imageData = base64_encode(file_get_contents($url));
-	$urlEncoded = 'data: '.mime_content_type($url).';base64,'.$imageData;
+	$src = 'data: '.mime_content_type($url).';base64,'.$imageData;
+    return $src;
 }
 
-
+$urlEncoded = encoding($url);
 //Return data in json
 $response['profileUrl'] = $urlEncoded;
 $response['username'] = $account->getUsername();
