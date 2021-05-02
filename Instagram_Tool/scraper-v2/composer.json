@@ -1,0 +1,5 @@
+{
+    "require": {
+        "restyler/instagram-php-scraper": "^1.0"
+    }
+}
