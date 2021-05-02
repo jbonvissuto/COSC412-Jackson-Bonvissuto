@@ -1,25 +1,48 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title></title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="toolStyle.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class ="centered">
-      <h1>Your Instagram Stats</h1>
-      <p>Username: <span id="username"></span></p>
-      <p>Full name: <span id="fullName"></span></p>
-      <p>Number of posts: <span id="postNum"></span></p>
-      <p>Number of followers: <span id="followersNum"></span></p>
-      <p>Number of follows: <span id="followsNum"></span></p>
-      <p>Number of likes: <span id="likes"></span></p>
-      <p>Number of comments: <span id="comments"></span></p>
-      <p>Average number of likes per post: <span id="avgLikes"></span></p>
-      <p>Average number of comments per post: <span id="avgComments"></span></p>
-      <p>More stats coming soon! </p>
-    </div>
+<h1><span class="blue"></span>Your Stats!<span class="blue"></span> </h1>
+    <table class="container">
+        <tbody>
+            <tr>
+                <td>Username</td>
+                <td><span id="username"></span></td>
+            </tr>
+            <tr>
+                <td>Full name</td>
+                <td><span id="fullName"></span></td>
+            </tr>
+            <tr>
+                <td>Number of posts</td>
+                <td><span id="postNum"></span></td>
+            </tr>
+            <tr>
+                <td>Number of follows</td>
+                <td><span id="followersNum"></span></td>
+            </tr>
+            <tr>
+                <td>Number of likes</td>
+                <td><span id="likes"></span></td>
+            </tr>
+            <tr>
+                <td>Number of comments</td>
+                <td><span id="comments"></span></td>
+            </tr>
+            <tr>
+                <td>Average number of likes per post</td>
+                <td><span id="avgLikes"></span></td>
+            </tr>
+            <tr>
+                <td>Average number of comments per post</td>
+                <td><span id="avgComments"></td>
+            </tr>
+        </tbody>
+    </table>
     <script src="./jquery-3.6.0.min.js"></script>  
     <script src="./tool.js"></script>
   </body>
