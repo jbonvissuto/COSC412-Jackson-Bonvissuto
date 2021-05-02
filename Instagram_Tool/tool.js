@@ -20,7 +20,13 @@ $("#connect").click(function(e) {
     localStorage.setItem('username', username.value);
     checkAccount();
 });
-
+window.onload = function what(){
+  document.getElementById("username").innerHTML = localStorage.getItem('username');
+  document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
+  document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
+  document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
+  document.getElementById("followsNum").innerHTML = localStorage.getItem('followsNum');
+}
 function checkAccount(){ 
   $.post("getAccountv2.php", {"username": localStorage.getItem('username')}, function(response) {
       //Store values returned by scraper in local storage
@@ -29,9 +35,9 @@ function checkAccount(){
       localStorage.setItem('followersNum', response.followersNum);
       localStorage.setItem('followsNum', response.followsNum);
       //Display the tool page
-      window.location.href = "tool.html";
-      "tool.html".onload = function what(){
-        document.getElementById("username").innerHTML = "Batman"//localStorage.getItem('username');
+      location.href = "tool.html";
+      window.onload = function what(){
+        document.getElementById("username").innerHTML = localStorage.getItem('username');
         document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
         document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
         document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
