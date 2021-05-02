@@ -30,7 +30,7 @@ function checkAccount(){
       localStorage.setItem('followsNum', response.followsNum);
       //Display the tool page
       window.location.href = "tool.html";
-      window.onload = function what(){
+      "tool.html".onload = function what(){
         document.getElementById("username").innerHTML = "Batman"//localStorage.getItem('username');
         document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
         document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
