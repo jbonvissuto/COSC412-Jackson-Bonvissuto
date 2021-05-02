@@ -36,7 +36,7 @@ $("#connect").click(function(e) {
 });
 
 function checkAccount(){ 
-    $.post("getAccount.php")
+    $.post("getAccountv2.php")
     .done(function() {
         alert( "$.get succeeded" );
     })
