@@ -18,35 +18,29 @@ setTimeout(function() {
 $("#connect").click(function(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
-    localStorage.setItem('password', password.value);
     console.log(localStorage.getItem('username'));
-    console.log(localStorage.getItem('password'));
     checkAccount();
-    /*if(localStorage.getItem('username') === "bat" && localStorage.getItem('password') === "test"){
-        location.href = "tool.html";
-      }  
-      else{
-          // Changing content and color of content
-        error.textContent = "Unable to find account, try again"
-        setTimeout(function() {
-            location.reload();
-          }, delayInMilliseconds);
-        
-      }*/
 });
 
 function checkAccount(){ 
   $.post("getAccountv2.php", {"username": localStorage.getItem('username')}, function(response) {
-      //location.href = "tool.html";
-      document.getElementById("username").innerHTML = response.username;
-      document.getElementById("fullName").innerHTML = response.fullName;
-      document.getElementById("postNum").innerHTML = response.postNum;
-      document.getElementById("followersNum").innerHTML = response.followersNum;
-      document.getElementById("followsNum").innerHTML = response.followsNum;
+      //Store values returned by scraper in local storage
+      localStorage.setItem('fullName', response.fullName);
+      localStorage.setItem('postNum', response.postNum);
+      localStorage.setItem('followersNum', response.followersNum);
+      localStorage.setItem('followsNum', response.followsNum);
+      //Display the tool page
+      location.href = "tool.html";
+      //Display the stats on the tool page
+      document.getElementById("username").innerHTML     = localStorage.getItem('username');
+      document.getElementById("fullName").innerHTML     = localStorage.getItem('fullNam');
+      document.getElementById("postNum").innerHTML      = localStorage.getItem('postNum');
+      document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
+      document.getElementById("followsNum").innerHTML   = localStorage.getItem('followsNum');
   }, 'json' 
   )
   .fail(function() {
-    alert("Account not found!");
+    alert("Username: " + localStorage.getItem('username') + " not found, try another one.");
     setTimeout(function() {
       location.reload();
     }, delayInMilliseconds);
