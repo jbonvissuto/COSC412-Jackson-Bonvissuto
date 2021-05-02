@@ -37,7 +37,7 @@ $("#connect").click(function(e) {
 
 function checkAccount(){ 
   $.post("getAccountv2.php", function(response) {
-      location.href = "tool.html";
+      //location.href = "tool.html";
       document.getElementById("username").innerHTML = response.username;
       document.getElementById("fullName").innerHTML = response.fullName;
       document.getElementById("postNum").innerHTML = response.postNum;
