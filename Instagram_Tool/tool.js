@@ -44,7 +44,10 @@ function checkAccount(){
       document.getElementById("followersNum").innerHTML = response.followersNum;
       document.getElementById("followsNum").innerHTML = response.followsNum;
   }, 'json' 
-  );
+  )
+  .fail(function(xhr, status, error) {
+    alert(xhr.responseText);
+  });
 }
 
 
