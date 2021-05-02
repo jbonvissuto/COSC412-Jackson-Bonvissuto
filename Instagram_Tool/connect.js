@@ -1,6 +1,7 @@
 
 // username from input 
 var username = document.getElementById('username');
+// set the loading circle as a variable
 var div = document.getElementById('load');
 
 

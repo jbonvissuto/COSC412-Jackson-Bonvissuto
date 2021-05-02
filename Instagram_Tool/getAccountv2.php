@@ -3,6 +3,7 @@ use Phpfastcache\Helper\Psr16Adapter;
 require __DIR__ . '/scraper-v2/vendor/autoload.php';
 require __DIR__ . '/scraper-v2/vendor/restyler/instagram-php-scraper/src/InstagramScraper.php';
 // If account is public you can query Instagram without auth
+//declare variables 
 $likes = 0;
 $comments = 0;
 $username = $_POST['username'];
@@ -22,7 +23,7 @@ for ($x = 0; $x < $account->getMediaCount(); $x++) {
     $comments += $tempMedia->getCommentsCount();
     $likes += $tempMedia->getLikesCount();
 }
-//convert url from instagram
+//encode url from instagram
 $url = $account->getProfilePicUrl();
 function encoding($url){
 	$imageData = base64_encode(file_get_contents($url));
