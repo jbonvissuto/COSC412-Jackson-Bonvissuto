@@ -28,15 +28,17 @@ function checkAccount(){
       localStorage.setItem('postNum', response.postNum);
       localStorage.setItem('followersNum', response.followersNum);
       localStorage.setItem('followsNum', response.followsNum);
-      username = localStorage.getItem('username')
       //Display the tool page
       location.href = "tool.html";
+      window.onload = function what(){
+        document.getElementById("username").innerHTML = localStorage.getItem('username');
+        document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
+        document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
+        document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
+        document.getElementById("followsNum").innerHTML = localStorage.getItem('followsNum');
+      };
       //Display the stats on the tool page
-      document.getElementById("username").innerHTML = username;
-      document.getElementById("fullName").innerHTML = username //localStorage.getItem('fullName');
-      document.getElementById("postNum").innerHTML = username //localStorage.getItem('postNum');
-      document.getElementById("followersNum").innerHTML = username//localStorage.getItem('followersNum');
-      document.getElementById("followsNum").innerHTML = username//localStorage.getItem('followsNum');
+     
   }, 'json' 
   )
   .fail(function() {
