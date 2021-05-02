@@ -38,15 +38,10 @@ body {background-color: #eeeeee;}
   margin-bottom:10px;
   opacity: 0.8;
 }
-
-/* Add a red background color to the cancel button */
-
-
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-
 /* pop up css */
 #popupbox{
   margin: auto;
