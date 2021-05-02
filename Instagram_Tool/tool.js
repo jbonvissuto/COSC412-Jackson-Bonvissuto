@@ -1,6 +1,11 @@
-//on loading tool.js display the stats 
+//calculate stats
 var avgLikes = localStorage.getItem('likes')/localStorage.getItem('postNum');
 var avgComments = localStorage.getItem('comments')/localStorage.getItem('postNum');
+//round the numbers
+avgLikes = Math.round(avgLikes * 10) / 10;
+avgComments = Math.round(avgComments * 10) / 10;
+
+//on loading tool.js display the stats
 window.onload = function what(){
     document.getElementById("username").innerHTML = localStorage.getItem('username');
     document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
