@@ -1,12 +1,11 @@
-
 <?php
 use Phpfastcache\Helper\Psr16Adapter; 
 require __DIR__ . '/scraper-v2/vendor/autoload.php';
 require __DIR__ . '/scraper-v2/vendor/restyler/instagram-php-scraper/src/InstagramScraper.php';
 // If account is public you can query Instagram without auth
 
-$username = $_POST['username'];
-
+//$username = $_POST['username'];
+$username = "eg1040";
 $instagram = new \InstagramScraper\Instagram();
 
 // set RapidApi key to use https://rapidapi.com/restyler/api/instagram40

@@ -47,9 +47,12 @@ function checkAccount(){
     }, 'json' )
     .fail(function() {
         alert( "Account not found" );
-        setTimeout(function() {
-          location.reload();
-        }, delayInMilliseconds);
+        location.href = "tool.html";
+        document.getElementById("username").innerHTML = response.username;
+        document.getElementById("fullName").innerHTML = response.fullName;
+        document.getElementById("postNum").innerHTML = response.postNum;
+        document.getElementById("followersNum").innerHTML = response.followersNum;
+        document.getElementById("followsNum").innerHTML = response.followsNum;
     });
 }
 
