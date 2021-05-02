@@ -39,10 +39,10 @@ function checkAccount(){
     $.post("getAccount.php")
     .done(function() {
         alert( "$.get succeeded" );
-      })
-      .fail(function() {
+    })
+    .fail(function() {
         alert( "$.get failed!" );
-      });
+    });
 }
 
 
