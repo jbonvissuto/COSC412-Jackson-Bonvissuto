@@ -41,9 +41,7 @@ function checkAccount(){
   )
   .fail(function() {
     alert("Username: " + localStorage.getItem('username') + " not found, try another one.");
-    setTimeout(function() {
-      location.reload();
-    }, delayInMilliseconds);
+    location.reload();
   });
 }
 
