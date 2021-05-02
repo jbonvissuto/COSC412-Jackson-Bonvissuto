@@ -20,13 +20,13 @@ $("#connect").click(function(e) {
     localStorage.setItem('username', username.value);
     checkAccount();
 });
-window.onload = function what(){
+/*window.onload = function what(){
   document.getElementById("username").innerHTML = localStorage.getItem('username');
   document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
   document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
   document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
   document.getElementById("followsNum").innerHTML = localStorage.getItem('followsNum');
-}
+}*/
 
 function checkAccount(){ 
   $.post("getAccountv2.php", {"username": localStorage.getItem('username')}, function(response) {
