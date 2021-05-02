@@ -30,5 +30,5 @@ echo "Number of follows: {$account->getFollowedByCount()}\n";
 echo "Is private: {$account->isPrivate()}\n";
 echo "Is verified: {$account->isVerified()}\n";
 
-$response_array['status'] = 'success'; 
-echo json_encode($response_array);
+//$response_array['status'] = 'success'; 
+//echo json_encode($response_array);

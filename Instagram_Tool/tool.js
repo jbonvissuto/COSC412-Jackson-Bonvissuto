@@ -35,6 +35,22 @@ $("#connect").click(function(e) {
       }
 });
 
+function checkAccount(){ 
+    $.post("getAccount.php")
+    .done(function() {
+        alert( "$.get succeeded" );
+      })
+      .fail(function() {
+        alert( "$.get failed!" );
+      });
+}
+
+
+
+
+
+
+
 /*function checkAccount(){
         $.post("getAccount.php", {"username": username.value, "password": password.value}, function() {
             alert( "success" );
@@ -47,7 +63,8 @@ $("#connect").click(function(e) {
   });
     
 }*/
-function checkAccount(){
+
+/*function checkAccount(){
     $.ajax({
         url: "getAccount.php",
         type: "POST",
@@ -58,8 +75,10 @@ function checkAccount(){
                 alert("Thank you for subscribing!");
             }
         },
-        error: function() {
-          alert("There was an error. Try again please!");
+        error: function(data) {
+          alert(data.status);
+          //alert("There was an error. Try again please!");
         }
       });
 }
+*/
