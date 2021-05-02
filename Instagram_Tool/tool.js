@@ -45,8 +45,11 @@ function checkAccount(){
       document.getElementById("followsNum").innerHTML = response.followsNum;
   }, 'json' 
   )
-  .fail(function(xhr, status, error) {
-    alert(xhr.responseText);
+  .fail(function() {
+    alert("Account not found!");
+    setTimeout(function() {
+      location.reload();
+    }, delayInMilliseconds);
   });
 }
 
