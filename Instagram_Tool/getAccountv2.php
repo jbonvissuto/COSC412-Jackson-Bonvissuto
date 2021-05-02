@@ -22,9 +22,16 @@ for ($x = 0; $x < $account->getMediaCount(); $x++) {
     $comments += $tempMedia->getCommentsCount();
     $likes += $tempMedia->getLikesCount();
 }
+//convert url from instagram
+$url = $account->getProfilePicUrl();
+function encoding($url){
+	$imageData = base64_encode(file_get_contents($url));
+	$urlEncoded = 'data: '.mime_content_type($url).';base64,'.$imageData;
+}
+
 
 //Return data in json
-$response['profileUrl'] = $account->getProfilePicUrl();
+$response['profileUrl'] = $urlEncoded;
 $response['username'] = $account->getUsername();
 $response['fullName'] = $account->getFullName();
 $response['postNum'] = $account->getMediaCount();
