@@ -9,6 +9,6 @@ window.onload = function what(){
     document.getElementById("followsNum").innerHTML = localStorage.getItem('followsNum');
     document.getElementById("likes").innerHTML = localStorage.getItem('likes');
     document.getElementById("comments").innerHTML = localStorage.getItem('comments');
-    document.getElementById("avgLikes").innerHTML = avgLike;
+    document.getElementById("avgLikes").innerHTML = avgLikes;
     document.getElementById("avgComments").innerHTML = avgComments;
   }
