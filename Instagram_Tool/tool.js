@@ -18,7 +18,6 @@ setTimeout(function() {
 $("#connect").click(function(e) {
     e.preventDefault();
     localStorage.setItem('username', username.value);
-    console.log(localStorage.getItem('username'));
     checkAccount();
 });
 
@@ -29,14 +28,15 @@ function checkAccount(){
       localStorage.setItem('postNum', response.postNum);
       localStorage.setItem('followersNum', response.followersNum);
       localStorage.setItem('followsNum', response.followsNum);
+      username = localStorage.getItem('username')
       //Display the tool page
       location.href = "tool.html";
       //Display the stats on the tool page
-      document.getElementById("username").innerHTML     = localStorage.getItem('username');
-      document.getElementById("fullName").innerHTML     = localStorage.getItem('fullName');
-      document.getElementById("postNum").innerHTML      = localStorage.getItem('postNum');
+      document.getElementById("username").innerHTML = username;
+      document.getElementById("fullName").innerHTML = localStorage.getItem('fullName');
+      document.getElementById("postNum").innerHTML = localStorage.getItem('postNum');
       document.getElementById("followersNum").innerHTML = localStorage.getItem('followersNum');
-      document.getElementById("followsNum").innerHTML   = localStorage.getItem('followsNum');
+      document.getElementById("followsNum").innerHTML = localStorage.getItem('followsNum');
   }, 'json' 
   )
   .fail(function() {
