@@ -12,7 +12,7 @@
    font-weight: 300;
    line-height: 1.42em;
    color:#A7A1AE;
-   background-color:#1F2739;
+   background-color:#eeeeee;
  }
  
  h1 {
@@ -61,10 +61,12 @@
  .container {
        text-align: left;
        overflow: hidden;
-       width: 80%;
+       width: 90%;
        margin: 0 auto;
    display: table;
-   padding: 0 0 8em 0;
+   padding: 0 0 0 0;
+   border: 8px solid #1098ad;
+   background-color: #0E1119;
  }
  
  .container td, .container th {
@@ -114,3 +116,19 @@
  .container td:nth-child(4),
  .container th:nth-child(4) { display: none; }
  }
+
+
+
+.image {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Resize images */
+.image img {
+  width: 100%;
+  border: 9px solid #5073b8;
+  border-radius: 50%;
+  margin-bottom: 10%;
+}

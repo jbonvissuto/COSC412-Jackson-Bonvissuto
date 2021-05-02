@@ -16,6 +16,7 @@ $("#connect").click(function(e) {
 function checkAccount(){ 
   $.post("getAccountv2.php", {"username": localStorage.getItem('username')}, function(response) {
       //Store values returned by scraper in local storage
+      localStorage.setItem('profileUrl', response.profileUrl);
       localStorage.setItem('fullName', response.fullName);
       localStorage.setItem('postNum', response.postNum);
       localStorage.setItem('followersNum', response.followersNum);

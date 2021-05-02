@@ -24,6 +24,7 @@ for ($x = 0; $x < $account->getMediaCount(); $x++) {
 }
 
 //Return data in json
+$response['profileUrl'] = $account->getProfilePicUrl();
 $response['username'] = $account->getUsername();
 $response['fullName'] = $account->getFullName();
 $response['postNum'] = $account->getMediaCount();
