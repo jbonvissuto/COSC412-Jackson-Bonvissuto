@@ -2,7 +2,7 @@
 <?php
 use Phpfastcache\Helper\Psr16Adapter; 
 require __DIR__ . '/scraper-v2/vendor/autoload.php';
-
+require __DIR__ . '/scraper-v2/vendor/restyler/instagram-php-scraper/src/InstagramScraper.php';
 // If account is public you can query Instagram without auth
 
 $instagram = new \InstagramScraper\Instagram();
