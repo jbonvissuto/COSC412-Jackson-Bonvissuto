@@ -17,8 +17,8 @@ function checkAccount(){
       localStorage.setItem('postNum', response.postNum);
       localStorage.setItem('followersNum', response.followersNum);
       localStorage.setItem('followsNum', response.followsNum);
-      localStorage.setItem('likes', response.comments);
-      localStorage.setItem('comments', response.likes);
+      localStorage.setItem('likes', response.likes);
+      localStorage.setItem('comments', response.comments);
       //Display the tool page
       location.href = "tool.html";
   }, 'json' 
