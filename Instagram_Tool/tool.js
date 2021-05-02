@@ -22,7 +22,7 @@ $("#connect").click(function(e) {
     console.log(localStorage.getItem('username'));
     console.log(localStorage.getItem('password'));
     checkAccount();
-    if(localStorage.getItem('username') === "bat" && localStorage.getItem('password') === "test"){
+    /*if(localStorage.getItem('username') === "bat" && localStorage.getItem('password') === "test"){
         location.href = "tool.html";
       }  
       else{
@@ -32,16 +32,24 @@ $("#connect").click(function(e) {
             location.reload();
           }, delayInMilliseconds);
         
-      }
+      }*/
 });
 
 function checkAccount(){ 
-    $.post("getAccountv2.php")
-    .done(function() {
-        alert( "$.get succeeded" );
-    })
+    $.post("getAccountv2.php", {"username": localStorage.getItem('username')},
+    function(response) {
+        location.href = "tool.html";
+        document.getElementById("username").innerHTML = response.username;
+        document.getElementById("fullName").innerHTML = response.fullName;
+        document.getElementById("postNum").innerHTML = response.postNum;
+        document.getElementById("followersNum").innerHTML = response.followersNum;
+        document.getElementById("followsNum").innerHTML = response.followsNum;
+    }, 'json' )
     .fail(function() {
-        alert( "$.get failed!" );
+        alert( "Account not found" );
+        setTimeout(function() {
+          location.reload();
+        }, delayInMilliseconds);
     });
 }
 
