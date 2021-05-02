@@ -36,6 +36,19 @@ $("#connect").click(function(e) {
 });
 
 function checkAccount(){ 
+  $.post("getAccountv2.php", function(response) {
+      location.href = "tool.html";
+      document.getElementById("username").innerHTML = response.username;
+      document.getElementById("fullName").innerHTML = response.fullName;
+      document.getElementById("postNum").innerHTML = response.postNum;
+      document.getElementById("followersNum").innerHTML = response.followersNum;
+      document.getElementById("followsNum").innerHTML = response.followsNum;
+  }, 'json' 
+  );
+}
+
+
+/*function checkAccount(){ 
     $.post("getAccountv2.php", {"username": localStorage.getItem('username')},
     function(response) {
         location.href = "tool.html";
@@ -47,14 +60,8 @@ function checkAccount(){
     }, 'json' )
     .fail(function() {
         alert( "Account not found" );
-        location.href = "tool.html";
-        document.getElementById("username").innerHTML = response.username;
-        document.getElementById("fullName").innerHTML = response.fullName;
-        document.getElementById("postNum").innerHTML = response.postNum;
-        document.getElementById("followersNum").innerHTML = response.followersNum;
-        document.getElementById("followsNum").innerHTML = response.followsNum;
     });
-}
+}*/
 
 
 

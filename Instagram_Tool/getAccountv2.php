@@ -14,7 +14,7 @@ $instagram->setRapidApiKey('1a13d009f1mshd034ff6ad99c722p12348bjsn4ca4aff99d6f')
 // For getting information about account you don't need to auth:
 $account = $instagram->getAccountInfo($username);
 
-// Available fields
+/*// Available fields
 echo "Account info:\n";
 echo "Id: {$account->getId()}\n";
 echo "Username: {$account->getUsername()}\n";
@@ -27,6 +27,7 @@ echo "Number of followers: {$account->getFollowsCount()}\n";
 echo "Number of follows: {$account->getFollowedByCount()}\n";
 echo "Is private: {$account->isPrivate()}\n";
 echo "Is verified: {$account->isVerified()}\n";
+*/
 
 $response['username'] = $account->getUsername();
 $response['fullName'] = $account->getFullName();
